@@ -2,5 +2,7 @@
     "AUTHOR" : "Eslyium",
     "DESCRIPTION" : "Posts Cats/Pugs",
     "DISABLED" : false,
-    "NAME" : "Animal Poster"
+    "INSTALL_MSG" : "Congrats On Downloading The Animal Cog!",
+    "NAME" : "Animal",
+    "SHORT" : "Posts Cats/Pugs"
 }

@@ -1,6 +1,8 @@
 {
     "AUTHOR" : "Eslyium",
-    "DESCRIPTION" : "Slap a user with an item",
+    "DESCRIPTION" : "A Cog That Allows You to Slap People",
     "DISABLED" : false,
-    "NAME" : "Slap"
+    "INSTALL_MSG" : "Congrats On Downloading Slap! You Can Add/Remove Items With [p]slapadd \"Item\"/[p]slapremove \"item\".",
+    "NAME" : "Slap",
+    "SHORT" : "A Fun Cog That Allows You To Slap People With Items."
 }

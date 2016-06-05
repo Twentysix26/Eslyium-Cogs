@@ -1,6 +1,8 @@
 {
     "AUTHOR" : "Eslyium",
-    "DESCRIPTION" : "Posts Random Hentai From Selected Sites (NSFW)",
+    "DESCRIPTION" : "Posts Hentai links From Selected Sites That You Can Watch.",
     "DISABLED" : false,
-    "NAME" : "Hentai"
+    "INSTALL_MSG" : "Congrats On Downloading The Hentai Cog!",
+    "NAME" : "Hentai",
+    "SHORT" : "Gives A Random Link For Some Hentai Videos"
 }

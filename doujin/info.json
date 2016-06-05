@@ -1,6 +1,8 @@
 {
     "AUTHOR" : "Eslyium",
-    "DESCRIPTION" : "Posts Random Doujins From Selected Sites (NSFW)",
+    "DESCRIPTION" : "Posts Random Doujin Links From Selected Sites.",
     "DISABLED" : false,
-    "NAME" : "Doujin"
+    "INSTALL_MSG" : "Congrats On Downloading The Doujin Cog!",
+    "NAME" : "Doujin",
+    "SHORT" : "Posts Random Doujin Links"
 }

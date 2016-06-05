@@ -1,6 +1,8 @@
 {
-    "AUTHOR" : "Revamped by Eslyium/Made By Nikki",
-    "DESCRIPTION" : "A Collection of NSFW websites that will post images (Requires beautifulsoup4, pip install beautifulsoup4)",
+    "AUTHOR" : "Eslyium/Nikki",
+    "DESCRIPTION" : "Posts Images From Selected Sites",
     "DISABLED" : false,
-    "NAME" : "Nsfw"
+    "INSTALL_MSG" : "Congrats On Downloading The NSFW Cog!",
+    "NAME" : "nsfw",
+    "SHORT" : "NSFW Image Poster"
 }
