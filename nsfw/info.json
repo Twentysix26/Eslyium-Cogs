@@ -1,6 +1,6 @@
 {
     "AUTHOR" : "Eslyium/Nikki",
-    "DESCRIPTION" : "Posts Images From Selected Sites",
+    "DESCRIPTION" : "Posts Images From Selected Sites pip3 install beautifulsoup4",
     "DISABLED" : false,
     "INSTALL_MSG" : "Congrats On Downloading The NSFW Cog!",
     "NAME" : "Nsfw",
