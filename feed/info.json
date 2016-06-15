@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "Eslyium",
+    "DESCRIPTION" : "Force food down a users throat with [p]feed @user",
+    "DISABLED" : false,
+    "INSTALL_MSG" : "",
+    "NAME" : "Feed",
+    "SHORT" : "Forcefully feed a user."
+}
