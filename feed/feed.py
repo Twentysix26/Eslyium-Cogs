@@ -1,9 +1,7 @@
 import discord
 from discord.ext import commands
-import asyncio
 from random import choice as rndchoice
 from .utils.dataIO import fileIO
-from .utils import checks
 import os
 
 defaults = [
@@ -48,6 +46,7 @@ defaults = [
     ":rice_cracker:",
     ":shaved_ice:"]
 
+
 class Feed:
     """Feeding command."""
 
@@ -55,19 +54,15 @@ class Feed:
         self.bot = bot
         self.items = fileIO("data/feed/items.json", "load")
 
-    def save_items(self):
-        fileIO("data/slap/items.json", 'save', self.items)
-
-    @commands.command(pass_context=True, invoke_without_command=True)
-    async def feed(self, ctx, *, user : discord.Member=None):
+    @commands.command()
+    async def feed(self, user : discord.Member=None):
         """Force A food Item Down A Users Throat"""
-        if ctx.invoked_subcommand is None:
-            if user.id == self.bot.user.id:
-                user = ctx.message.author
-                await self.bot.say(":skull: -Dies- :skull:")
-                return
-            await self.bot.say("-forces " + (rndchoice(self.items) + " down " +
-                               user.name + "'s" + " throat-"))
+        if user.id == self.bot.user.id:
+            await self.bot.say(":skull: -Dies- :skull:")
+            return
+        await self.bot.say("-forces {} down {}'s"
+                           " throat-".format(rndchoice(self.items),
+                                             user.name))
 
 def check_folders():
     if not os.path.exists("data/feed"):
@@ -79,6 +74,7 @@ def check_files():
     if not fileIO(f, "check"):
         print("Creating empty items.json...")
         fileIO(f, "save", defaults)
+
 
 def setup(bot):
     check_folders()

@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from __main__ import send_cmd_help
 import aiohttp
 from bs4 import BeautifulSoup
 import random
@@ -15,7 +16,7 @@ class Nsfw:
     async def nsfw(self, ctx):
         """Nsfw Commands"""
         if ctx.invoked_subcommand is None:
-            await self.bot.say("For more info use help nsfw (Proper use for commands nsfw <catagory>)")
+            await send_cmd_help(ctx)
 
     @nsfw.command(no_pm=True)
     async def yandere(self):
