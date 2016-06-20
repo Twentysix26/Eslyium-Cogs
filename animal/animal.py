@@ -11,6 +11,7 @@ class Animal:
 
     @commands.command()
     async def cats(self):
+        """Shows a cat"""
         search = "http://random.cat/meow"
         try:
             async with aiohttp.get(search) as r:
@@ -18,9 +19,12 @@ class Animal:
             await self.bot.say(result['file'])
         except:
             await self.bot.say("Couldnt Get An Image")
-			
+
     @commands.command()
     async def catsbomb(self, amount : int = 5):
+        """Throws a cat bomb!
+
+        Defaults to 5"""
         search = "http://random.cat/meow"
         results = []
         if amount > 10 or amount < 1:
@@ -36,6 +40,7 @@ class Animal:
 
     @commands.command()
     async def pugs(self):
+        """Shows a pug"""
         search = "http://pugme.herokuapp.com/random"
         try:
             async with aiohttp.get(search) as r:
@@ -46,6 +51,9 @@ class Animal:
 
     @commands.command()
     async def pugsbomb(self, amount : int = 5):
+        """Throws a pugs bomb!
+
+        Defaults to 5"""
         search = "http://pugme.herokuapp.com/random"
         results = []
         if amount > 10 or amount < 1:
