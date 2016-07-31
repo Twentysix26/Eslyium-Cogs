@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "Eslyium/Irdumb",
+    "DESCRIPTION" : "Posts BNS Emotes If Word Is Seen",
+    "DISABLED" : false,
+    "INSTALL_MSG" : "",
+    "NAME" : "Bnsemote",
+    "SHORT" : "BNS Emotes"
+}
