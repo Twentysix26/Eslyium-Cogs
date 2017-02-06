@@ -1,8 +1,9 @@
 {
     "AUTHOR" : "Eslyium",
+    "SHORT" : "Forcefully feed a user.",
     "DESCRIPTION" : "Force food down a users throat with [p]feed @user",
     "DISABLED" : false,
-    "INSTALL_MSG" : "Thanks for installing feed.",
     "NAME" : "Feed",
-    "SHORT" : "Forcefully feed a user."
+    "TAGS" : ["feed"],
+    "INSTALL_MSG" : "Congrats On Downloading The Feed Cog!"
 }
