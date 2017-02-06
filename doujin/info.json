@@ -3,7 +3,7 @@
     "SHORT" : "Posts Random Doujin Links From Selected Sites.",
     "DESCRIPTION" : "Posts random NSFW doujins Sites.",
     "DISABLED" : false,
-    "NAME" : "Animal",
+    "NAME" : "Doujin",
     "TAGS" : ["nsfw", "doujin"],
     "INSTALL_MSG" : "Congrats On Downloading The Doujin Cog!",
 }
