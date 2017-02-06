@@ -1,8 +1,9 @@
 {
     "AUTHOR" : "Eslyium",
-    "DESCRIPTION" : "Posts Random Doujin Links From Selected Sites.",
+    "SHORT" : "Posts Random Doujin Links From Selected Sites.",
+    "DESCRIPTION" : "Posts random NSFW doujins Sites.",
     "DISABLED" : false,
+    "NAME" : "Animal",
+    "TAGS" : ["nsfw", "doujin"],
     "INSTALL_MSG" : "Congrats On Downloading The Doujin Cog!",
-    "NAME" : "Doujin",
-    "SHORT" : "Posts Random Doujin Links"
 }
