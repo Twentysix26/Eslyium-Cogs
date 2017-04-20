@@ -14,8 +14,7 @@ defaults = [
     "Will's SquidBot",
     "JennJenn's Penguin Army",
     "Red's Transistor",
-    "Asu\u10e6's Wrath",
-    "Skordy's Keyboard"]
+    "Asu\u10e6's Wrath"]
 
 
 class Slap:
