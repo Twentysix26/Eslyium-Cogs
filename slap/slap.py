@@ -33,7 +33,7 @@ class Slap:
         if user is None:
             user = ctx.message.author
             await self.bot.say("Dont make me slap you instead " + user.name)
-            return
+        else:
             await self.bot.say("-slaps " + user.name + " with " +
                                (rndchoice(self.items) + "-"))
 
