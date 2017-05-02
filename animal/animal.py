@@ -7,7 +7,7 @@ class Animal:
 
     def __init__(self, bot):
         self.bot = bot
-        swlf.session = self.bot.http.session
+        self.session = self.bot.http.session
 
     @commands.command()
     async def cats(self):
