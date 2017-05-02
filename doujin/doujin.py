@@ -1,13 +1,14 @@
 import discord
 from discord.ext import commands
-import aiohttp
 from __main__ import send_cmd_help
+
 
 class Doujin:
     """Doujin commands."""
 
     def __init__(self, bot):
         self.bot = bot
+	self.session = self.bot.http.session
 
     @commands.group(pass_context=True)
     async def doujin(self, ctx):
@@ -19,21 +20,21 @@ class Doujin:
     async def nhentai(self):
         """Sends a random doujin"""
         url = "http://nhentai.net/random/"
-        async with aiohttp.get(url) as r:
+        async with self.session.get(url) as r:
             await self.bot.say(r.url)
 			
     @doujin.command(no_pm=True)
     async def tsumino(self):
         """Sends a random doujin"""
         url = "http://www.tsumino.com/Browse/Random"
-        async with aiohttp.get(url) as r:
+        async with self.session.get(url) as r:
             await self.bot.say(r.url)
 			
     @doujin.command(no_pm=True)
     async def hbrowse(self):
         """Sends a random doujin"""
         url = "http://www.hbrowse.com/random"
-        async with aiohttp.get(url) as r:
+        async with self.session.get(url) as r:
             await self.bot.say(r.url)
 
 def setup(bot):
