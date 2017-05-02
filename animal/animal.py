@@ -1,20 +1,20 @@
 import discord
 from discord.ext import commands
 from __main__ import send_cmd_help
-import aiohttp
 
 class Animal:
     """Animal commands."""
 
     def __init__(self, bot):
         self.bot = bot
+        swlf.session = self.bot.http.session
 
     @commands.command()
     async def cats(self):
         """Shows a cat"""
         search = "http://random.cat/meow"
         try:
-            async with aiohttp.get(search) as r:
+            async with self.session.get(search) as r:
                 result = await r.json()
             await self.bot.say(result['file'])
         except:
@@ -31,7 +31,7 @@ class Animal:
             amount = 5
         try:
             for x in range(0,amount):
-                async with aiohttp.get(search) as r:
+                async with self.session.get(search) as r:
                     api_result = await r.json()
                     results.append(api_result['file'])
             await self.bot.say("\n".join(results)) # \o/ Thanks irdumb <3
@@ -43,7 +43,7 @@ class Animal:
         """Shows a pug"""
         search = "http://pugme.herokuapp.com/random"
         try:
-            async with aiohttp.get(search) as r:
+            async with self.session.get(search) as r:
                 result = await r.json()
             await self.bot.say(result['pug'])
         except:
@@ -60,7 +60,7 @@ class Animal:
             amount = 5
         try:
             for x in range(0,amount):
-                async with aiohttp.get(search) as r:
+                async with self.session.get(search) as r:
                     api_result = await r.json()
                     results.append(api_result['pug'])
             await self.bot.say("\n".join(results)) # \o/ Thanks irdumb <3
