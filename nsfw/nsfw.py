@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from __main__ import send_cmd_help
-import aiohttp
 from bs4 import BeautifulSoup
 import random
 
@@ -11,6 +10,7 @@ class Nsfw:
 
     def __init__(self, bot):
         self.bot = bot
+        self.session = self.bot.http.session
 
     @commands.group(pass_context=True)
     async def nsfw(self, ctx):
@@ -23,7 +23,7 @@ class Nsfw:
         """Random Image From Yandere"""
         try:
             query = ("https://yande.re/post/random")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="highres").get("href")
@@ -36,7 +36,7 @@ class Nsfw:
         """Random Image From Konachan"""
         try:
             query = ("https://konachan.com/post/random")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="highres").get("href")
@@ -49,7 +49,7 @@ class Nsfw:
         """Random Image From e621"""
         try:
             query = ("https://e621.net/post/random")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="highres").get("href")
@@ -62,7 +62,7 @@ class Nsfw:
         """Random Image From rule34"""
         try:
             query = ("http://rule34.xxx/index.php?page=post&s=random")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="image").get("src")
@@ -75,7 +75,7 @@ class Nsfw:
         """Random Image From Danbooru"""
         try:
             query = ("http://danbooru.donmai.us/posts/random")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="image").get("src")
@@ -88,7 +88,7 @@ class Nsfw:
         """Random Image From Gelbooru"""
         try:
             query = ("http://www.gelbooru.com/index.php?page=post&s=random")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="image").get("src")
@@ -101,7 +101,7 @@ class Nsfw:
         """Random Image From DrunkenPumken"""
         try:
             query = ("http://www.tbib.org/index.php?page=post&s=random")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="image").get("src")
@@ -114,7 +114,7 @@ class Nsfw:
         """Random Image From Xbooru"""
         try:
             query = ("http://xbooru.com/index.php?page=post&s=random")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="image").get("src")
@@ -127,7 +127,7 @@ class Nsfw:
         """Random Image From Furrybooru"""
         try:
             query = ("http://furry.booru.org/index.php?page=post&s=random")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="image").get("src")
@@ -140,7 +140,7 @@ class Nsfw:
         """Random Image From DrunkenPumken"""
         try:
             query = ("http://drunkenpumken.booru.org/index.php?page=post&s=random")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="image").get("src")
@@ -153,7 +153,7 @@ class Nsfw:
         """Random Image From Lolibooru"""
         try:
             query = ("https://lolibooru.moe/post/random/")
-            page = await aiohttp.get(query)
+            page = await self.session.get(query)
             page = await page.text()
             soup = BeautifulSoup(page, 'html.parser')
             image = soup.find(id="image").get("src")
@@ -171,7 +171,7 @@ class Nsfw:
             try:
                 tags = ("+").join(tags)
                 query = ("https://yande.re/post.json?limit=42&tags=" + tags)
-                page = await aiohttp.get(query)
+                page = await self.session.get(query)
                 json = await page.json()
                 if json != []:
                     await self.bot.say(random.choice(json)['jpeg_url'])
