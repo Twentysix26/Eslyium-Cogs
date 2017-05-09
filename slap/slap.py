@@ -15,7 +15,7 @@ defaults = [
     "JennJenn's Penguin Army",
     "Red's Transistor",
     "Asu\u10e6's Wrath",
-    "Skordy's Keyboard"]
+    "Irdumb's Cookie jar"]
 
 
 class Slap:
