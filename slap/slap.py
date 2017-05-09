@@ -14,7 +14,8 @@ defaults = [
     "Will's SquidBot",
     "JennJenn's Penguin Army",
     "Red's Transistor",
-    "Asu\u10e6's Wrath"]
+    "Asu\u10e6's Wrath",
+    "Skordy's Keyboard"]
 
 
 class Slap:
@@ -30,9 +31,16 @@ class Slap:
     @commands.group(pass_context=True, invoke_without_command=True)
     async def slap(self, ctx, *, user: discord.Member=None):
         """Slap a user"""
+        botid = self.bot.user.id
         if user is None:
             user = ctx.message.author
             await self.bot.say("Dont make me slap you instead " + user.name)
+        elif user.id == botid:
+            user = ctx.message.author
+            botname = self.bot.user.name
+            await self.bot.say("-" + botname + " slaps " + user.mention +
+                               " multiple times with " +
+                               (rndchoice(self.items) + "-"))
         else:
             await self.bot.say("-slaps " + user.name + " with " +
                                (rndchoice(self.items) + "-"))
